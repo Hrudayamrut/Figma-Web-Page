@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Web Page</title>
+    <style>
+        /* styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        .option-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+            text-align: left;
+            box-shadow:inset 0 3px 7px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .discount-badge {
+            background: #ff4081;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .most-popular {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff4081;
+            color: white;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 5px;
+        }
+
+        .option-details {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .size-color-select {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .size-color-select select {
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .delivery {
+            color: #ff4081;;
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: left;
+            position: relative;
+            animation: blink-animation 2s step-end infinite;
+        }
+        @keyframes blink-animation {
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+        
+.total {
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: right;
+        }
+
+        .add-to-cart {
+            
+            background: linear-gradient(to bottom, #fab7cd, #ff4081); 
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        }
+        .add-to-cart:hover {
+             background: linear-gradient(to bottom, #bb0740, #bb0740); 
+             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+        .footer {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        
+        .selected {
+            background-color: #ffe0eb;
+            border-color: #ff95b9;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .option-header,
+            .size-color-select {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .total, .delivery {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YAY! It's BOGO</h1>
+        <div class="option-box" id="option1">
+            <div class="option-header">
+                <label>
+                    <input type="radio" name="unit" value="1">
+                    1 Unit <span class="discount-badge">10% Off</span>
+                </label>
+                <span>$10.00 USD</span>
+            </div>
+            <div class="option-details">Standard Price <s>$24.00 USD</s></div>
+        </div>
+
+        <div class="option-box" id="option2">
+            <div class="option-header">
+                <label>
+                    <input type="radio" name="unit" value="2">
+                    2 Unit <span class="discount-badge">20% Off</span>
+                </label>
+                <span>$18.00 USD</span>
+            </div>
+            <div class="most-popular">MOST POPULAR</div>
+            <div class="option-details"><s>$24.00 USD</s></div>
+            <div class="size-color-select">
+                <select>
+                    <option>Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+                <select>
+                    <option>Colour</option>
+                    <option>Black</option>
+                    <option>Red</option>
+                    <option>Blue</option>
+                </select>
+            </div>
+            <div class="size-color-select">
+                <select>
+                    <option>Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+                <select>
+                    <option>Colour</option>
+                    <option>Black</option>
+                    <option>Red</option>
+                    <option>Blue</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="option-box" id="option3">
+            <div class="option-header">
+                <label>
+                    <input type="radio" name="unit" value="3">
+                    3 Unit <span class="discount-badge">30% Off</span>
+                </label>
+                <span>$24.00 USD</span>
+            </div>
+            <div class="option-details"><s>$24.00 USD</s></div>
+        </div>
+
+        <div class="delivery">Free Delivery</div>
+        <div class="total">Total: <span id="total-price">$10.00 USD</span></div>
+        <button class="add-to-cart">+ Add to Cart</button>
+        <div class="footer">@ Powered by Pumper</div>
+    </div>
+
+    <script>
+       const optionBoxes = document.querySelectorAll('.option-box');
+const totalPrice = document.getElementById('total-price');
+
+optionBoxes.forEach((box, index) => {
+    const radio = box.querySelector('input[type="radio"]');
+
+    
+    box.addEventListener('click', () => {
+        
+        radio.checked = true;
+
+    
+        optionBoxes.forEach(box => box.classList.remove('selected'));
+
+    
+        box.classList.add('selected');
+
+        
+        switch (radio.value) {
+            case '1':
+                totalPrice.textContent = '$10.00 USD';
+                break;
+            case '2':
+                totalPrice.textContent = '$18.00 USD';
+                break;
+            case '3':
+                totalPrice.textContent = '$24.00 USD';
+                break;
+        }
+    });
+});
+</script>
+</body>
+</html>
